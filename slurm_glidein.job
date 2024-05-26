@@ -1,0 +1,26 @@
+#!/bin/bash
+export account=INF24_lhc_1
+export partition=boost_usr_prod
+export length=1400 # in minute
+#export ntasks-per-node=8 
+export cpus=32  # the product should be 128
+export gpu="gpu:4"        # 1 gpus per node out of 4
+export jobname=CMS_GLIDEIN
+
+
+export GLIDEINSCRIPTS=$WORK/CMSWORK/leonardo_opportunistic
+
+export EXE=$GLIDEINSCRIPTS/itb_glideinwrapper_leo
+
+export CERTIFICATE=$GLIDEINSCRIPTS/credential_leo_itb.idtoken
+
+# I cannot easily check if the certificate is valid from here .. I need to trust
+
+echo == SLURM GLIDEIN starting at `date` 
+
+
+srun -A $account  --job-name=$jobname -p $partition -t $length --gres=$gpu --cpus-per-task=$cpus $EXE
+
+echo == SLURM GLIDEIN finishing at `date` with code $?
+
+exit 0
