@@ -18,7 +18,6 @@ export CERTIFICATE=$GLIDEINSCRIPTS/credential_leo_itb.idtoken
 
 echo == SLURM GLIDEIN starting at `date` 
 
-
 srun -A $account  --job-name=$jobname -p $partition -t $length --gres=$gpu --cpus-per-task=$cpus $EXE
 
 echo == SLURM GLIDEIN finishing at `date` with code $?
