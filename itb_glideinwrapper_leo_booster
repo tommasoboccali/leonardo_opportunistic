@@ -1,11 +1,14 @@
 #!/bin/sh
 
+# per fare tests per ora
+# srun -t 1400  -A inf24_lhc_1 --pty --reservation=test_cvmfs -p boost_usr_prod --ntasks=1   -J  AA_CVMFS_BB  --cpus-per-task=32 --gres=gpu:4 -w lrdn0241 bash
+
 export TMPDIR=/leonardo_scratch/large/userexternal/tboccali/slurm/$SLURM_JOBID
 #export TMPDIR=/leonardo_work/INF24_lhc_1/CMSWORK/slurm/$SLURM_JOBID
 mkdir -p $TMPDIR
 
 
-export APPTAINER_BINDPATH=/tmp,/cvmfs,/leonardo_work/INF24_lhc_1,leonardo_scratch/large/userexternal
+export APPTAINER_BINDPATH=/tmp,/cvmfs,/leonardo_work/INF24_lhc_1,/leonardo_scratch/large/userexternal
 export SINGULARITY_BINDPATH=${APPTAINER_BINDPATH}
 
 export SINGULARITY_USERNS=1
