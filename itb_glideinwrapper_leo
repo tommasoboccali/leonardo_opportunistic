@@ -1,7 +1,7 @@
 #!/bin/sh
 
-export TEMPDIR=/leonardo_work/INF24_lhc_1/CMSWORK/slurm/$SLURM_JOBID
-mkdir -p $TEMPDIR
+export TMPDIR=/leonardo_work/INF24_lhc_1/CMSWORK/slurm/$SLURM_JOBID
+mkdir -p $TMPDIR
 
 #export SINGULARITY_BINDPATH=/exa5/scratch/user/spigad/CMS/SITECONF
 #export TMPDIR=/ceph/hpc/home/spigad/new_grant/ITB
