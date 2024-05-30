@@ -13,15 +13,7 @@ export SINGULARITY_BINDPATH=${APPTAINER_BINDPATH}
 
 export SINGULARITY_USERNS=1
 
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/cvmfs/datacloud.infn.it/repo/wn-leonardo/v1/usr/lib:/cvmfs/datacloud.infn.it/repo/wn-leonardo/v1/usr/lib64
-export PATH=$PATH:/cvmfs/datacloud.infn.it/repo/wn-leonardo/v1/usr/bin:/cvmfs/datacloud.infn.it/repo/wn-leonardo/v1/usr/local/bin
-
-export PYTHONPATH=$PYTHONPATH:/cvmfs/datacloud.infn.it/repo/wn-leonardo/v1/usr/lib/python3.6/site-packages/:/cvmfs/datacloud.infn.it/repo/wn-leonardo/v1/usr/lib64/python3.6/site-packages/
-
-export X509_CERT_DIR=/cvmfs/grid.cern.ch/etc/grid-security/certificates/
-export X509_VOMSES=/cvmfs/grid.cern.ch/etc/grid-security/vomses
-export VOMS_USERCONF=/cvmfs/grid.cern.ch/etc/grid-security/vomses
-export X509_VOMS_DIR=/cvmfs/grid.cern.ch/etc/grid-security/vomsdir/
+source /cvmfs/datacloud.infn.it/repo/wn-leonardo/v1/etc/profile.d/wn-leonardo-setup.sh
 
 export LC_ALL=C; unset LANGUAGE
 
