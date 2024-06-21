@@ -5,12 +5,12 @@ export length=1400 # in minute
 #export ntasks-per-node=8 
 export cpus=112  # the product should be 128
 export jobname=CMS_GLIDEIN_CVMFS
-export TMPSPACE='tmpfs:1T'
+export TMPSPACE='tmpfs:3t'
 
 
 export GLIDEINSCRIPTS=$WORK/CMSWORK/leonardo_opportunistic
 
-export EXE=$GLIDEINSCRIPTS/itb_glideinwrapper_leo_booster
+export EXE=$GLIDEINSCRIPTS/itb_glideinwrapper_leo_dcgp
 
 export CERTIFICATE=$GLIDEINSCRIPTS/credential_leo_itb.idtoken
 
@@ -18,7 +18,7 @@ export CERTIFICATE=$GLIDEINSCRIPTS/credential_leo_itb.idtoken
 
 echo == SLURM GLIDEIN starting at `date` 
 
-srun -A $account  --job-name=$jobname -p $partition -t $length  --gres=$TMPSPACE --ntasks=1 --cpus-per-task=$cpus -$EXE
+srun -A $account  -J $jobname -p $partition -t $length  --gres=$TMPSPACE --ntasks=1 --cpus-per-task=$cpus $EXE
 #srun -t 1400  -A inf24_lhc_1 --pty --reservation=test_cvmfs -p boost_usr_prod --ntasks=1   -J  AA_CVMFS_BB  --cpus-per-task=32 --gres=gpu:4 -w lrdn0241 bash
 
 echo == SLURM GLIDEIN finishing at `date` with code $?
