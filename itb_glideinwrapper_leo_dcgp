@@ -7,7 +7,15 @@ export TEMPDIR=$TMPDIR/slurm/$SLURM_JOBID
 
 mkdir -p $TEMPDIR
 
-/usr/local/bin/afuse_cvmfs2_helper
+echo Checking if CVMFS is already on
+
+if pgrep -x "afuse" > /dev/null
+then
+    echo "Yes, I found afuse"
+else
+    echo "Starting afuse"
+    /usr/local/bin/afuse_cvmfs2_helper
+fi
 
 #ls -l /cvmfs/cms.cern.ch
 

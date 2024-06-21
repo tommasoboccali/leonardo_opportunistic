@@ -7,7 +7,16 @@ export TMPDIR=/leonardo_scratch/large/userexternal/tboccali/slurm/$SLURM_JOBID
 #export TMPDIR=/leonardo_work/INF24_lhc_1/CMSWORK/slurm/$SLURM_JOBID
 mkdir -p $TMPDIR
 
-/usr/local/bin/afuse_cvmfs2_helper
+
+echo Checking if CVMFS is already on
+
+if pgrep -x "afuse" > /dev/null
+then
+    echo "Yes, I found afuse"
+else 
+    echo "Starting afuse"
+    /usr/local/bin/afuse_cvmfs2_helper
+fi
 
 
 export APPTAINER_BINDPATH=/tmp,/cvmfs,/leonardo_work/INF24_lhc_1,/leonardo_scratch/large/userexternal
