@@ -48,13 +48,13 @@ def analyze_jobs(jdict):
 
 
 # single job executor
-jobexecutor = "./slurm_glidein.job"
+jobexecutor = "./slurm_glidein_booster.job"
 
 #logprefix
 log_prefix = "job_log_"
 
 #this is the name used to identify these jobs
-jobname = "CMS_GLIDEIN_CVMFS"
+jobname = "BOOST_CMS_GLIDEIN_CVMFS"
 
 #limits!
 # max_runnig, max_idle, min_idle

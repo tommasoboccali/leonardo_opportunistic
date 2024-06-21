@@ -7,6 +7,8 @@ export TMPDIR=/leonardo_scratch/large/userexternal/tboccali/slurm/$SLURM_JOBID
 #export TMPDIR=/leonardo_work/INF24_lhc_1/CMSWORK/slurm/$SLURM_JOBID
 mkdir -p $TMPDIR
 
+/usr/local/bin/afuse_cvmfs2_helper
+
 
 export APPTAINER_BINDPATH=/tmp,/cvmfs,/leonardo_work/INF24_lhc_1,/leonardo_scratch/large/userexternal
 export SINGULARITY_BINDPATH=${APPTAINER_BINDPATH}

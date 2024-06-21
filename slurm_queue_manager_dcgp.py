@@ -54,7 +54,7 @@ jobexecutor = "slurm_glidein_dcgp.job"
 log_prefix = "job_log_"
 
 #this is the name used to identify these jobs
-jobname = "CMS_GLIDEIN_CVMFS"
+jobname = "GP_CMS_GLIDEIN_CVMFS"
 
 #limits!
 # max_runnig, max_idle, min_idle
