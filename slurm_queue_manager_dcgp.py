@@ -48,7 +48,7 @@ def analyze_jobs(jdict):
 
 
 # single job executor
-jobexecutor = "slurm_glidein_dcgp.job"
+jobexecutor = "./slurm_glidein_dcgp.job"
 
 #logprefix
 log_prefix = "logs/gp_job_log_"
