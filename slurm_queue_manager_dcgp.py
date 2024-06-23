@@ -22,7 +22,7 @@ def getSlurmStatus(slurm_command):
     if (re.search("PARTITION",line) != None and re.search("STATE",line) != None):
 #            print("DISCARDING LINE",line)
             continue
-    print (line.split())
+#    print (line.split())
     (number,partition,name,user,state,time,time_limit,nodes,nodelist) = line.split() 
     job = {}
     job["jobid"]=int(number)
@@ -42,7 +42,7 @@ def analyze_jobs(jdict):
     pending=0
 
     for d in jdict:
-        print (jdict)
+  #      print (jdict)
         if (d['state'] == "RUNNING"):
                 running = running + 1
         if (d['state'] == "PENDING"):
