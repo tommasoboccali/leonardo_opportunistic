@@ -15,4 +15,5 @@ Ricordarsi di creare: credential_leo_itb.idtoken  che NON deve essere in git
 Nuove capability dynamic: slurm_queue_manager_dynamic.py  conf.json
 
 legge conf.json a ogni iterazione, per cui si puo' modificare il comportamento mentre runna
+per esempio, mettendo max_hours a 0 si ferma lo script
 
