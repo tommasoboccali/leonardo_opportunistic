@@ -57,7 +57,7 @@ filename = sys.argv[1]
 print ("Using configuration from",filename)
 
 # read json
-f = open(sys.argv[1])
+f = open(filename)
 
 # returns JSON object as
 # a dictionary
@@ -106,13 +106,18 @@ while (count < conf["max_hours"]*(3600./20)):
  time.sleep(20)
   #reload conf!
  # read json
- f = open('booster.json')
+ f = open(filename)
 
  # returns JSON object as
  # a dictionary
  conf = json.load(f)
  print ("Current Max_Running",conf["max_running"])
  print ("Current Max_Pending",conf["max_idle"])
+ #early stop
+ #print ("COUNT:", count, "MAX HOURS:", conf["max_hours"], "CHECK:", conf["max_hours"]*(3600./20))
+ if (count > conf["max_hours"]*(3600./20)):
+    print ("Stopping the Manager, max_hours set to",conf["max_hours"])
+    exit (4)
 #
 
 
