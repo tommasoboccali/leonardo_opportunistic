@@ -6,6 +6,7 @@ import re
 import time
 from datetime import datetime
 import json
+import sys
 
 def getSlurmStatus(slurm_command):
   mydict = [] 
@@ -48,9 +49,15 @@ def analyze_jobs(jdict):
                 pending = pending + 1
     return (running, pending)
 
+#read command line
+if (len(sys.argv)!=2):
+        print (" I need one argument: the json configuration file")
+        exit (3)
+filename = sys.argv[1]
+print ("Using configuration from",filename)
 
 # read json
-f = open('booster.json')
+f = open(sys.argv[1])
 
 # returns JSON object as
 # a dictionary
