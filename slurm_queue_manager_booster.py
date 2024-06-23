@@ -15,6 +15,7 @@ def getSlurmStatus(slurm_command):
   for line in io.TextIOWrapper(proc.stdout, encoding="utf-8"):  # or another encoding
     # do something with line
 #    print("got line ",line)
+    line=line.replace("(ReqNodeNotAvail, Reserved for maintenance)","Maintenance")
     if (len(line.split())!=9):
 #            print("DISCARDING LINE",line)
             continue
