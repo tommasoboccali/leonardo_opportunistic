@@ -18,6 +18,15 @@ else
     /usr/local/bin/afuse_cvmfs2_helper
 fi
 
+if ls -l /cvmfs/cms.cern.ch ; then
+    echo "CVMFS now works"
+else
+    echo "Starting CVMFS failed, exiting ..."
+    exit 111
+fi
+
+echo HOSTNAME
+hostname
 
 export APPTAINER_BINDPATH=/tmp,/cvmfs,/leonardo_work/INF24_lhc_1,/leonardo_scratch/large/userexternal
 export SINGULARITY_BINDPATH=${APPTAINER_BINDPATH}

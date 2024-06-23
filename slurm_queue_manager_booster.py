@@ -58,8 +58,10 @@ jobname = "BOOST_CMS_GLIDEIN_CVMFS"
 
 #limits!
 # max_runnig, max_idle, min_idle
-max_running = 10
+max_running = 5  
 max_idle = 5
+
+max_hours = 2
 
 #command to get list of job
 slurm_command = "squeue -l -n "+jobname+" --me"
@@ -70,9 +72,15 @@ print ("Max_Running",max_running)
 print ("Max_Pending",max_idle)
 print ("Job Executor",jobexecutor)
 print ("Log Prefix",log_prefix)
-print ("SLURMO Job Name",jobname)
+print ("Operate at max for hours ",max_hours)
+print ("SLURM Job Name",jobname)
 
-while (True):
+count=0
+
+while (count < max_hours*(3600./20)):
+ 
+ count = count + 1  
+
  jobs_dict = getSlurmStatus(slurm_command)
 
  (running,pending) = analyze_jobs(jobs_dict)
