@@ -1,0 +1,1 @@
+{"jobexecutor": "./slurm_glidein_booster.job", "log_prefix": "logs/booster_job_log_", "jobname": "BOOST_CMS_GLIDEIN_CVMFS", "max_running": 50, "max_idle": 3, "max_hours": 2}
