@@ -15,12 +15,14 @@ def getSlurmStatus(slurm_command):
   for line in io.TextIOWrapper(proc.stdout, encoding="utf-8"):  # or another encoding
     # do something with line
 #    print("got line ",line)
+    line=line.replace("(ReqNodeNotAvail, Reserved for maintenance)","Maintenance")
     if (len(line.split())!=9):
 #            print("DISCARDING LINE",line)
             continue
     if (re.search("PARTITION",line) != None and re.search("STATE",line) != None):
 #            print("DISCARDING LINE",line)
             continue
+    print (line.split())
     (number,partition,name,user,state,time,time_limit,nodes,nodelist) = line.split() 
     job = {}
     job["jobid"]=int(number)
@@ -40,9 +42,11 @@ def analyze_jobs(jdict):
     pending=0
 
     for d in jdict:
+        print (jdict)
         if (d['state'] == "RUNNING"):
                 running = running + 1
         if (d['state'] == "PENDING"):
+                print ("add pending")
                 pending = pending + 1
     return (running, pending)
 
