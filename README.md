@@ -17,3 +17,5 @@ Nuove capability dynamic: slurm_queue_manager_dynamic.py  conf.json
 legge conf.json a ogni iterazione, per cui si puo' modificare il comportamento mentre runna
 per esempio, mettendo max_hours a 0 si ferma lo script
 
+
+Le versioni  _lowprio.json sono usate per girare sulla qos=qos_lowprio, a bassa priorita' ma NON a pagamento 
