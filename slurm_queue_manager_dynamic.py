@@ -82,6 +82,7 @@ count=0
 
 while (count < conf["max_hours"]*(3600./20)):
 
+ print('Cycles missing: ',int(conf["max_hours"]*(3600./20)-count))
  count = count + 1  
 
  jobs_dict = getSlurmStatus(slurm_command)
