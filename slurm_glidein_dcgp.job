@@ -4,7 +4,7 @@ export partition=dcgp_usr_prod
 export length=1400 # in minute
 #export ntasks-per-node=8 
 export cpus=112  # the product should be 128
-export jobname=GP_CMS_GLIDEIN_CVMFS
+export jobname=GP_CMS_GLIDEIN_CVMFS_JOB
 export TMPSPACE='tmpfs:3t'
 
 

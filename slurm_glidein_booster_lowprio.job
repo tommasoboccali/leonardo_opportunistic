@@ -5,7 +5,7 @@ export length=720 # in minute
 #export ntasks-per-node=8 
 export cpus=32  # the product should be 128
 export gpu="gpu:4"        # 1 gpus per node out of 4
-export jobname=BOOST_CMS_GLIDEIN_CVMFS
+export jobname=BOOST_CMS_GLIDEIN_CVMFS_JOB
 
 
 export GLIDEINSCRIPTS=$WORK/CMSWORK/leonardo_opportunistic

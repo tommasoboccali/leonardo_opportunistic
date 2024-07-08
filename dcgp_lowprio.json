@@ -1,1 +1,1 @@
-{"jobexecutor": "./slurm_glidein_dcgp_lowprio.job", "log_prefix": "logs/gp_job_log_", "jobname": "GP_CMS_GLIDEIN_CVMFS", "max_running": 100, "max_idle": 5, "max_hours": 20000}
+{"jobexecutor": "./slurm_glidein_dcgp_lowprio.job", "log_prefix": "logs/gp_job_log_", "jobname": "GP_CMS_GLIDEIN_CVMFS_JOB", "max_running": 100, "max_idle": 5, "max_hours": 20000}
